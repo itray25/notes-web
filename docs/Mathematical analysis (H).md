@@ -141,7 +141,7 @@ $\eta=n_{0}.n_{1}n_{2}n_{3}\dots n_{k}n_{k+1}\dots$
 #### **P3 证明 $\eta$ 为 $S$ 的上确界**
 
 对 $\forall \epsilon >0,\exists k_{0}\in\mathbb{N}^+,\text{使}\epsilon> \frac{1}{10^k}$ 则 $\eta -\epsilon <\eta -\frac{1}{10^k}$  
-$=n_{0}.n_{1}n_{2}n_{3}\dots n_{k}\dots-\frac{1}{10^k}\leq =n_{0}.n_{1}n_{2}n_{3}\dots n_{k}$ 但取等条件无法满足(只能取得 $\dot{0}$ 而非 $\dot{9}$)  
+$=n_{0}.n_{1}n_{2}n_{3}\dots n_{k}\dots-\frac{1}{10^k}\leq n_{0}.n_{1}n_{2}n_{3}\dots n_{k}$ 但取等条件无法满足(只能取得 $\dot{0}$ 而非 $\dot{9}$)  
 故 $\exists x\in [n_{0}.n_{1}\dots n_{k},n_{0}.n_{1}\dots n_{k}+\frac{1}{10^k})\subset S$ 使得 $\eta -\epsilon <n_{0}.n_{1}n_{2}n_{3}\dots n_{k}<x$
 
 > $\forall \epsilon>0,\exists x\in S,\text{使得}x>y-\epsilon$ (上确界条件二) 满足
