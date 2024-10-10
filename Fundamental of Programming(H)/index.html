@@ -1,0 +1,1739 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Linear%20Algebra%28H%29/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Fundamental of Programming(H) - Iridium's class notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Iridium&#39;s class notes" class="md-header__button md-logo" aria-label="Iridium's class notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Iridium's class notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fundamental of Programming(H)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Fundamental of Programming(H)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Linear%20Algebra%28H%29/" class="md-tabs__link">
+        
+  
+    
+  
+  Linear Algebra(H)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Mathematical%20analysis%20%28H%29/" class="md-tabs__link">
+        
+  
+    
+  
+  Mathematical analysis (H)
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Iridium&#39;s class notes" class="md-nav__button md-logo" aria-label="Iridium's class notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Iridium's class notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Fundamental of Programming(H)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Fundamental of Programming(H)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一章 计算机技术发展与程序设计的重要性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一章 计算机技术发展与程序设计的重要性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 程序设计概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 计算机组成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 计算机组成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 硬件组成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 软件组成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 程序设计语言的发展
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 程序设计语言的发展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 机器语言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 汇编语言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 高级语言
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 程序设计过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 程序设计过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 算法设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      流程图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      N-S 图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 编程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 编译与链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 调试与维护
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-" class="md-nav__link">
+    <span class="md-ellipsis">
+      第 2 章 程序的基本组成 - 知识点提炼
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第 2 章 程序的基本组成 - 知识点提炼">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 程序的组成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 程序的组成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 注释
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 预处理指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 名字空间
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 主函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 输出流对象
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 变量与常量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 变量与常量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 数据类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 常量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 输入与输出
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 输入与输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 输入流
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 输入字符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 输出流
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 算术和赋值运算
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 算术和赋值运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 算术运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 赋值运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 复合赋值运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 自增与自减运算
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 类型转换
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 类型转换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 自动类型转换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 强制类型转换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-static_cast" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. static_cast
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 数学函数库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 变量详解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 变量详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 变量的定义与命名
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 变量的定义与命名">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 变量的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 变量命名规则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.3 “见名知意”的命名原则
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 变量的初始化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 变量的初始化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 变量的初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 初始化的重要性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. 数据类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3. 数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-integer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 整型（Integer）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-floating-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 实型（Floating Point）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 字符型（Character）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.4 布尔型（Boolean）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#335-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.5 枚举类型（Enumeration）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 变量的使用与作用域
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 变量的使用与作用域">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1 变量的作用域
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.2 变量的生命周期
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 变量的操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 变量的操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1 变量赋值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.2 多重赋值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#353" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.3 变量的运算
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 变量使用中的注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 例子
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 例子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例 1：计算圆的面积
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例 2：多个变量的初始化和运算
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linear%20Algebra%28H%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linear Algebra(H)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mathematical%20analysis%20%28H%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mathematical analysis (H)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Fundamental of Programming(H)</h1>
+
+<h2 id="_1">第一章 计算机技术发展与程序设计的重要性</h2>
+<p>自第一台计算机问世以来，计算机技术发展迅速，尤其是微型计算机的出现，扩展了其应用领域。如今，编写程序不再是计算机专业人员的专属任务，而是各个行业技术人员的基础技能。</p>
+<h3 id="1">1. 程序设计概述</h3>
+<p>程序设计是教会计算机完成特定任务的过程，类似于教学。它可以分为以下四个主要步骤：</p>
+<ol>
+<li><strong>算法设计</strong>：将问题分解为计算机能理解并执行的基本操作。</li>
+<li><strong>编程</strong>：使用具体的编程语言（如 C++）将算法实现。</li>
+<li><strong>编译与链接</strong>：将编程语言翻译为机器语言，并将不同的模块组合成可执行程序。</li>
+<li><strong>调试与维护</strong>：运行程序，检查其正确性，并在必要时修正错误。</li>
+</ol>
+<h3 id="2">2. 计算机组成</h3>
+<p>计算机由硬件和软件构成。硬件是计算机的物理部分，而软件是其逻辑控制部分。</p>
+<h4 id="21">2.1 硬件组成</h4>
+<p>经典计算机硬件遵循冯·诺依曼体系结构，包含以下五大部分：</p>
+<ul>
+<li><strong>运算器</strong>：执行算术和逻辑运算，由算术逻辑单元(ALU 执行控制器发出的控制信号)和寄存器组成(存放正在运算的数据)。</li>
+<li><strong>控制器</strong>：负责指挥和协调计算机的其他部件工作。包括程序计数器(PC 保存下一条要执行的指令地址)、指令寄存器(IR 保存当前正在执行的指令)、指令译码器(用来识别指令的功能)等。</li>
+<li><strong>存储器</strong>：分为主存储器（内存）和外存储器。内存存储运行中的程序和数据，外存用于长期存储。</li>
+<li><strong>输入设备</strong>：如键盘、鼠标，负责将外部数据输入计算机。</li>
+<li><strong>输出设备</strong>：如显示器、打印机，负责输出计算结果和信息。</li>
+</ul>
+<h4 id="22">2.2 软件组成</h4>
+<p>软件包括系统软件和应用软件。系统软件（如操作系统）将用户与硬件隔离，提供通用功能。应用软件则专门为某些具体任务而设计，如文字处理软件。</p>
+<h3 id="3">3. 程序设计语言的发展</h3>
+<h4 id="31">3.1 机器语言</h4>
+<p>最早的计算机语言是机器语言，使用二进制指令直接与硬件交互。虽然其效率高，但可读性极差，编写复杂且不具可移植性。</p>
+<h4 id="32">3.2 汇编语言</h4>
+<p>为解决机器语言的难用性，汇编语言以助记符形式表示机器指令，提升了可读性，但仍需经过翻译才能被计算机执行，且缺乏可移植性。</p>
+<h4 id="33">3.3 高级语言</h4>
+<p>高级语言如 C++大大简化了编程过程。它们独立于硬件，易于掌握并具备良好的可移植性。程序员通过少量的语法规则即可实现复杂任务。</p>
+<h3 id="4">4. 程序设计过程</h3>
+<h4 id="41">4.1 算法设计</h4>
+<p>算法是程序的核心，它必须清晰、有效且有限，解决复杂问题时通常需要将其分解为多个小问题。</p>
+<h4 id="_2">流程图</h4>
+<p>![[Pasted image 20240923230754.png]]</p>
+<h4 id="n-s">N-S 图</h4>
+<p>![[Pasted image 20240923230721.png]]</p>
+<h4 id="42">4.2 编程</h4>
+<p>编程是将算法用具体语言表达出来的过程。C++是本书选用的编程语言，源文件通常扩展名为“.cpp”。</p>
+<h4 id="43">4.3 编译与链接</h4>
+<p>编译器将源程序翻译成机器语言（目标文件），并链接已有工具程序，最终生成可执行文件。
+![[Pasted image 20240923230638.png]]</p>
+<h4 id="44">4.4 调试与维护</h4>
+<p>调试是发现并修正程序中的逻辑错误。维护则是程序使用过程中对错误的不断修正。</p>
+<h2 id="2-">第 2 章 程序的基本组成 - 知识点提炼</h2>
+<h3 id="21_1">2.1 程序的组成</h3>
+<h4 id="1_1">1. 注释</h4>
+<ul>
+<li><strong>作用</strong>：注释是写给开发者阅读的，不是给计算机执行的，帮助解释代码。</li>
+<li>
+<p><strong>注释类型</strong>：</p>
+</li>
+<li>
+<p>单行注释：使用 <code>//</code> 开头。</p>
+</li>
+<li>多行注释：使用 <code>/* ... */</code> 包裹多行内容。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p>```cpp
+  // 这是一个单行注释</p>
+<p>/<em> 这是一个多行注释
+     第二行注释内容 </em>/
+  ```</p>
+<h4 id="2_1">2. 预处理指令</h4>
+<ul>
+<li><strong>预处理</strong>：C++ 的编译分为预编译和编译两个阶段。以 <code>#</code> 开头的指令属于预编译指令。</li>
+<li>
+<p><strong>常见预处理指令</strong>：</p>
+</li>
+<li>
+<p><code>#include</code>：引入库文件，如 <code>#include &lt;iostream&gt;</code>。</p>
+</li>
+<li><code>#define</code>：定义宏，带或不带参数，用于符号常量的定义。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  #include &lt;iostream&gt;
+  #define PI 3.14159</code></p>
+<h4 id="3_1">3. 名字空间</h4>
+<ul>
+<li><strong>作用</strong>：避免命名冲突。名字空间将一组程序实体组合在一起。</li>
+<li><strong>标准名字空间</strong>：C++ 中 <code>std</code> 是标准库的名字空间。</li>
+<li>
+<p><strong>常见用法</strong>：</p>
+</li>
+<li>
+<p>引入整个命名空间：<code>using namespace std;</code></p>
+</li>
+<li>引入特定元素：<code>using std::cout;</code></li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  using namespace std;  // 引入标准库命名空间
+  cout &lt;&lt; "Hello, World!";</code></p>
+<h4 id="4_1">4. 主函数</h4>
+<ul>
+<li><strong><code>main</code> 函数</strong>：每个 C++ 程序的入口，必须包含一个 <code>main()</code> 函数。</li>
+<li><strong>返回值</strong>：<code>main</code> 函数通常返回 <code>0</code> 以表示程序正常结束。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  int main() {
+      cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+      return 0;
+  }</code></p>
+<h4 id="5">5. 输出流对象</h4>
+<ul>
+<li><strong><code>cout</code></strong>：标准输出流对象，用于将信息输出到控制台。</li>
+<li><strong>插入运算符 <code>&lt;&lt;</code></strong>：用于将数据插入到输出流中。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  cout &lt;&lt; "Hello, World!" &lt;&lt; endl;  // 输出并换行</code></p>
+<h3 id="22_1">2.2 变量与常量</h3>
+<h4 id="1_2">1. 变量</h4>
+<ul>
+<li><strong>定义</strong>：变量为存储数据提供一个具名的内存空间。</li>
+<li>
+<p><strong>C++ 变量定义</strong>：</p>
+</li>
+<li>
+<p>变量名必须以字母或下划线 <code>_</code> 开头，后续字符可以是字母、数字或下划线。</p>
+</li>
+<li>C++ 变量区分大小写。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  int num1, num2;     // 定义两个整型变量
+  double area = 3.14; // 定义并初始化变量</code></p>
+<h4 id="2_2">2. 数据类型</h4>
+<ul>
+<li>
+<p><strong>基本数据类型</strong>：</p>
+</li>
+<li>
+<p><strong>整型</strong>：<code>int</code>, <code>short</code>, <code>long</code>，有符号或无符号（<code>unsigned</code>）。</p>
+</li>
+<li><strong>浮点型</strong>：<code>float</code>, <code>double</code>。</li>
+<li><strong>字符型</strong>：<code>char</code>，用于存储单个字符。</li>
+<li>
+<p><strong>布尔型</strong>：<code>bool</code>，值为 <code>true</code> 或 <code>false</code>。</p>
+</li>
+<li>
+<p><strong>自定义数据类型</strong>：枚举类型
+  <code>cpp
+  enum Weekday { Sunday, Monday, Tuesday };
+  Weekday today = Sunday;  // 枚举类型变量的定义和使用</code></p>
+</li>
+</ul>
+<h4 id="3_2">3. 常量</h4>
+<ul>
+<li>
+<p><strong>符号常量</strong>：</p>
+</li>
+<li>
+<p>使用 <code>const</code> 或 <code>#define</code> 定义常量。</p>
+</li>
+<li><code>const</code> 定义的常量类型安全。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  const double PI = 3.14159;  // 常量定义
+  #define MAX_SIZE 100        // 宏定义常量</code></p>
+<h3 id="23">2.3 输入与输出</h3>
+<h4 id="1_3">1. 输入流</h4>
+<ul>
+<li><strong><code>cin</code></strong>：标准输入流，用于从键盘读取数据。</li>
+<li><strong>提取运算符 <code>&gt;&gt;</code></strong>：将用户输入的数据存储到变量中。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  int age;
+  cout &lt;&lt; "请输入你的年龄：";
+  cin &gt;&gt; age;  // 从控制台输入</code></p>
+<h4 id="2_3">2. 输入字符</h4>
+<ul>
+<li><strong><code>cin.get()</code></strong>：用于获取单个字符，包括空白符。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  char ch;
+  cin.get(ch);  // 获取单个字符</code></p>
+<h4 id="3_3">3. 输出流</h4>
+<ul>
+<li><strong><code>cout</code></strong>：用于输出变量或表达式的值。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  int num = 10;
+  cout &lt;&lt; "The number is: " &lt;&lt; num &lt;&lt; endl;</code></p>
+<h3 id="24">2.4 算术和赋值运算</h3>
+<h4 id="1_4">1. 算术运算</h4>
+<ul>
+<li><strong>运算符</strong>：<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>。</li>
+<li><strong>优先级</strong>：<code>*</code>, <code>/</code>, <code>%</code> 优先级高于 <code>+</code>, <code>-</code>。</li>
+<li><strong>结合性</strong>：所有算术运算符都是左结合。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  int a = 5, b = 2;
+  int result = a + b * 3;  // 结果是 11</code></p>
+<h4 id="2_4">2. 赋值运算</h4>
+<ul>
+<li><strong>赋值运算符</strong>：<code>=</code>。</li>
+<li><strong>多重赋值</strong>：可以进行链式赋值，如 <code>a = b = 5;</code>。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  int a, b, c;
+  a = b = c = 5;  // 给a、b、c同时赋值为5</code></p>
+<h4 id="3_4">3. 复合赋值运算</h4>
+<ul>
+<li><strong>复合运算符</strong>：<code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>。</li>
+<li><strong>效果</strong>：将运算结果赋值给变量，如 <code>a += 5;</code> 等价于 <code>a = a + 5;</code>。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  int x = 10;
+  x += 2;  // x 的值为 12</code></p>
+<h4 id="4_2">4. 自增与自减运算</h4>
+<ul>
+<li><strong>自增运算符</strong>：<code>++</code>，增加 1。</li>
+<li><strong>自减运算符</strong>：<code>--</code>，减少 1。</li>
+<li>
+<p><strong>前缀与后缀</strong>：</p>
+</li>
+<li>
+<p>前缀：<code>++x</code>，先增加再使用值。</p>
+</li>
+<li>后缀：<code>x++</code>，先使用值再增加。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  int x = 3;
+  cout &lt;&lt; x++ &lt;&lt; endl;  // 输出 3，之后 x 变为 4
+  cout &lt;&lt; ++x &lt;&lt; endl;  // 先加1再输出，输出 5</code></p>
+<h3 id="25">2.5 类型转换</h3>
+<h4 id="1_5">1. 自动类型转换</h4>
+<ul>
+<li>
+<p><strong>规则</strong>：</p>
+</li>
+<li>
+<p>小类型自动转换为大类型。</p>
+</li>
+<li>整型转换为浮点型时，数值保持不变。</li>
+<li>浮点型转换为整型时，舍弃小数部分。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  int a = 4;
+  double b = a;  // 自动转换为 double 类型</code></p>
+<h4 id="2_5">2. 强制类型转换</h4>
+<ul>
+<li><strong>格式</strong>：<code>(类型名) 表达式</code> 或 <code>类型名(表达式)</code>。</li>
+<li><strong>用途</strong>：用于手动将一种数据类型转换为另一种。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  double result = (double) 5 / 2;  // 强制将 5 转为 double</code></p>
+<h4 id="3-static_cast">3. <code>static_cast</code></h4>
+<ul>
+<li><strong>使用</strong>：<code>static_cast&lt;类型名&gt;(表达式)</code>，用于进行类型安全的转换。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  int x = 65;
+  char ch = static_cast&lt;char&gt;(x);  // 将整型转换为字符型</code></p>
+<h3 id="26">2.6 数学函数库</h3>
+<ul>
+<li>
+<p><strong>常用数学函数</strong>：包含在 <code>&lt;cmath&gt;</code> 库中，必须引入库文件。</p>
+</li>
+<li>
+<p><code>sqrt(x)</code>：计算平方根。</p>
+</li>
+<li><code>pow(x, y)</code>：计算 x 的 y 次幂。</li>
+<li><code>abs(x)</code>：计算绝对值。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p><code>cpp
+  #include &lt;cmath&gt;
+  double result = sqrt(16);  // 结果为 4</code></p>
+<h3 id="27">2.7 总结</h3>
+<ul>
+<li>本章介绍了 C++ 程序的基本组成部分，包括注释、预处理指令、变量、常量、输入输出、运算符及类型转换</li>
+</ul>
+<p>等内容。</p>
+<ul>
+<li>熟练掌握这些基本概念和语法是编写 C++ 程序的基础。</li>
+</ul>
+<h2 id="3_5">3 变量详解</h2>
+<h3 id="31_1">3.1 变量的定义与命名</h3>
+<h4 id="311">3.1.1 变量的定义</h4>
+<ul>
+<li><strong>变量</strong>是程序中用来存储数据的具名内存空间，在程序运行时用于保存临时数据、中间结果和最终结果。</li>
+<li>
+<p><strong>变量的三个基本属性</strong>：</p>
+</li>
+<li>
+<p>数据类型：决定变量所能存储的数据范围及可以参与的运算类型。</p>
+</li>
+<li>变量名称：唯一标识该变量的符号名。</li>
+<li>
+<p>变量值：变量当前存储的具体数据。</p>
+</li>
+<li>
+<p><strong>C++ 中变量定义格式</strong>：</p>
+</li>
+</ul>
+<p>````cpp
+  类型名 变量名1, 变量名2, ..., 变量名n;</p>
+<p><strong>示例</strong>：
+  ```cpp
+  int num1, num2;  // 定义两个整型变量
+  double area;     // 定义一个双精度浮点型变量
+  ````</p>
+<h4 id="312">3.1.2 变量命名规则</h4>
+<ul>
+<li>变量名必须以字母或下划线 <code>_</code> 开头，之后可以包含字母、数字和下划线。</li>
+<li>C++ 变量区分大小写，例如 <code>abc</code> 和 <code>ABC</code> 是两个不同的变量。</li>
+<li>变量名不能与 C++ 的保留字（如 <code>int</code>, <code>double</code>, <code>for</code>, <code>return</code>）冲突。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-cpp">int score;   // 合法
+double Area; // 合法，大写开头
+int 2ndNum;  // 非法，不能以数字开头
+int return;  // 非法，不能使用保留字
+</code></pre>
+<h4 id="313">3.1.3 “见名知意”的命名原则</h4>
+<ul>
+<li>变量名应具有描述性，能够表示变量存储的内容和用途，方便程序员理解。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-cpp">double radius; // 存储圆的半径
+int totalScore; // 存储总得分
+</code></pre>
+<h3 id="32_1">3.2 变量的初始化</h3>
+<h4 id="321">3.2.1 变量的初始化</h4>
+<ul>
+<li><strong>初始化</strong>是指在变量定义时直接赋值给它一个初始值。</li>
+<li>C++ 支持以下几种变量初始化方式：</li>
+<li><strong>等号赋值</strong>：
+     <code>cpp
+     int num = 10;  // 将变量 num 初始化为 10</code></li>
+<li><strong>括号初始化</strong>：
+     <code>cpp
+     double area(5.5);  // 将变量 area 初始化为 5.5</code></li>
+<li><strong>花括号初始化</strong>：
+     <code>cpp
+     int count{100};  // 使用列表初始化，将 count 初始化为 100</code></li>
+</ul>
+<h4 id="322">3.2.2 初始化的重要性</h4>
+<ul>
+<li>在 C++ 中，使用未初始化的变量会导致未定义行为，变量会保存内存中的随机值，可能引发程序错误。因此，在使用前必须为变量赋初值。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-cpp">int age;  // 未初始化，值不确定
+age = 25; // 赋值
+
+int weight = 60;  // 初始化，值为 60
+</code></pre>
+<h3 id="33_1">3.3. 数据类型</h3>
+<h4 id="331-integer">3.3.1 整型（Integer）</h4>
+<ul>
+<li>
+<p><strong>整型</strong>用于存储整数。根据不同的存储范围和符号处理方式，C++ 提供以下几种整型类型：</p>
+</li>
+<li>
+<p><strong>标准整型</strong>：<code>int</code>，默认的整型类型。</p>
+</li>
+<li><strong>短整型</strong>：<code>short</code>，占用的存储空间比 <code>int</code> 小，通常是 2 字节。</li>
+<li><strong>长整型</strong>：<code>long</code>，占用的存储空间比 <code>int</code> 大，通常是 4 字节或 8 字节。</li>
+<li>
+<p><strong>无符号整型</strong>：<code>unsigned int</code>，只表示非负数，范围更大。</p>
+</li>
+<li>
+<p><strong>示例</strong>：
+  <code>cpp
+  int x = 42;           // 标准整型
+  short y = 123;        // 短整型
+  long z = 123456789L;  // 长整型
+  unsigned int count = 100;  // 无符号整型</code></p>
+</li>
+</ul>
+<h4 id="332-floating-point">3.3.2 实型（Floating Point）</h4>
+<ul>
+<li>
+<p><strong>浮点型</strong>用于表示带小数点的实数。C++ 提供以下几种实型：</p>
+</li>
+<li>
+<p><strong>单精度浮点型</strong>：<code>float</code>，占用 4 字节，精度较低。</p>
+</li>
+<li><strong>双精度浮点型</strong>：<code>double</code>，占用 8 字节，精度较高。</li>
+<li>
+<p><strong>长双精度浮点型</strong>：<code>long double</code>，精度最高，通常占用 12 字节或 16 字节。</p>
+</li>
+<li>
+<p><strong>浮点型变量示例</strong>：
+  <code>cpp
+  float height = 1.75f;     // 单精度浮点型
+  double weight = 72.5;     // 双精度浮点型
+  long double precision = 0.123456789012345L;  // 长双精度浮点型</code></p>
+</li>
+</ul>
+<h4 id="333-character">3.3.3 字符型（Character）</h4>
+<ul>
+<li>
+<p><strong>字符型</strong>用于存储单个字符，占用 1 字节。C++ 中的字符型以 <code>char</code> 声明，字符以 ASCII 码的形式存储。</p>
+</li>
+<li>
+<p><strong>字符型变量示例</strong>：
+  <code>cpp
+  char initial = 'A';  // 存储单个字符
+  char symbol = '#';   // 存储符号</code></p>
+</li>
+</ul>
+<h4 id="334-boolean">3.3.4 布尔型（Boolean）</h4>
+<ul>
+<li>
+<p><strong>布尔型</strong>用于存储布尔值，值为 <code>true</code> 或 <code>false</code>，占用 1 字节。</p>
+</li>
+<li>
+<p><strong>布尔型变量示例</strong>：
+  <code>cpp
+  bool isStudent = true;  // 存储布尔值
+  bool isGraduated = false;</code></p>
+</li>
+</ul>
+<h4 id="335-enumeration">3.3.5 枚举类型（Enumeration）</h4>
+<ul>
+<li>
+<p><strong>枚举类型</strong>是用户定义的类型，用于定义一组有限的整型常量，每个常量都具有唯一的名字，常用于表示状态或选项。</p>
+</li>
+<li>
+<p><strong>枚举类型示例</strong>：
+  <code>cpp
+  enum Day { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
+  Day today = Monday;  // 使用枚举类型变量</code></p>
+</li>
+</ul>
+<h3 id="34">3.4 变量的使用与作用域</h3>
+<h4 id="341">3.4.1 变量的作用域</h4>
+<ul>
+<li><strong>局部变量</strong>：在函数内部定义的变量，其作用域局限于定义它的函数或代码块内。</li>
+<li><strong>全局变量</strong>：在函数外部定义的变量，可以被程序中的所有函数访问。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-cpp">int globalVar = 100;  // 全局变量
+
+void function() {
+    int localVar = 50;  // 局部变量
+    cout &lt;&lt; globalVar &lt;&lt; endl;  // 访问全局变量
+}
+</code></pre>
+<h4 id="342">3.4.2 变量的生命周期</h4>
+<ul>
+<li><strong>局部变量</strong>的生命周期是从它定义时开始，到所在代码块结束时结束。</li>
+<li><strong>全局变量</strong>的生命周期贯穿程序的整个执行过程，从程序开始执行到结束。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-cpp">void test() {
+    int tempVar = 10;  // 局部变量，函数结束后销毁
+}
+</code></pre>
+<h3 id="35">3.5 变量的操作</h3>
+<h4 id="351">3.5.1 变量赋值</h4>
+<ul>
+<li>赋值语句用于给变量赋值，格式为 <code>变量名 = 表达式;</code>。表达式的值被存入变量中。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-cpp">int a;
+a = 5;  // 赋值
+</code></pre>
+<h4 id="352">3.5.2 多重赋值</h4>
+<ul>
+<li>可以对多个变量同时赋值，格式为 <code>a = b = c = 值;</code>，从右到左依次赋值。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-cpp">int a, b, c;
+a = b = c = 10;  // 三个变量都被赋值为 10
+</code></pre>
+<h4 id="353">3.5.3 变量的运算</h4>
+<ul>
+<li>变量可以参与算术运算、赋值运算等，常见运算符包括 <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-cpp">int x = 10, y = 5;
+int result = x + y;  // 结果为 15
+</code></pre>
+<h3 id="36">3.6 变量使用中的注意事项</h3>
+<ul>
+<li><strong>未初始化变量</strong>：在 C++ 中，未初始化的变量具有不确定值，使用前必须赋初值。</li>
+<li><strong>变量重名问题</strong>：在同一作用域内，不能定义两个名字相同的变量，否则会导致编译错误。</li>
+<li><strong>见名知意</strong>：变量名应该尽量反映变量的用途，便于阅读和维护代码。</li>
+</ul>
+<h3 id="37">3.7 例子</h3>
+<h4 id="1_6">示例 1：计算圆的面积</h4>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    const double PI = 3.14159;  // 定义常量
+    double radius, area;
+
+    cout &lt;&lt; &quot;请输入圆的半径: &quot;;
+    cin &gt;&gt;
+
+ radius;
+
+    area = PI * radius * radius;  // 计算圆的面积
+
+    cout &lt;&lt; &quot;圆的面积为: &quot; &lt;&lt; area &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
+<h4 id="2_6">示例 2：多个变量的初始化和运算</h4>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a = 5, b = 3, c;  // 初始化变量
+    c = a + b;            // 对变量进行运算
+
+    cout &lt;&lt; &quot;a + b = &quot; &lt;&lt; c &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

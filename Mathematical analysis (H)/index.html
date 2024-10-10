@@ -1,0 +1,1147 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Linear%20Algebra%28H%29/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Mathematical analysis (H) - Iridium's class notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Iridium&#39;s class notes" class="md-header__button md-logo" aria-label="Iridium's class notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Iridium's class notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mathematical analysis (H)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Fundamental%20of%20Programming%28H%29/" class="md-tabs__link">
+        
+  
+    
+  
+  Fundamental of Programming(H)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Linear%20Algebra%28H%29/" class="md-tabs__link">
+        
+  
+    
+  
+  Linear Algebra(H)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Mathematical analysis (H)
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Iridium&#39;s class notes" class="md-nav__button md-logo" aria-label="Iridium's class notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Iridium's class notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fundamental%20of%20Programming%28H%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fundamental of Programming(H)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linear%20Algebra%28H%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linear Algebra(H)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Mathematical analysis (H)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Mathematical analysis (H)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 函数：
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 函数：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-fx-f-1x" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 \(f(x)\) 为双射， \(f^{-1}(x)\) 为反函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 初等函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 常用函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 其他函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 实数集
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 实数集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 提出
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 实数的表示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 确界原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      (2) 确界原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="(2) 确界原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      定理：非空有上界数集 \(S\) , 必有上确界. (实数的连续性)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1" class="md-nav__link">
+    <span class="md-ellipsis">
+      P1 方便起见，先考虑上确界为正实数的情况
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-eta-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      P2 证明 \(\eta\) 为 \(S\) 的上界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3-eta-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3 证明 \(\eta\) 为 \(S\) 的上确界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p4" class="md-nav__link">
+    <span class="md-ellipsis">
+      P4 扩展到一般情况(平移)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p5" class="md-nav__link">
+    <span class="md-ellipsis">
+      P5 证明上确界的唯一性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 可数集和连续统
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 数列极限
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 数列极限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 数列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-epsilon-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 \(\epsilon-N\) 语言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 放缩证明数列极限
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 放缩证明数列极限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lim_-n-to-infty-frac-1nn0" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题 1 证明：\(\lim_{ n \to \infty }\frac{(-1)^n}{n}=0\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-p22-213" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题 2 见课本 P22 例 2.1.3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lim_-n-to-infty-qn0-q1" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题 3 证明： \(\lim_{ n \to \infty }q^n=0 (|q|&lt;1)\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-a1lim_-n-to-infty-sqrtna1" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题 4 证明： \(a&gt;1,\lim_{ n \to \infty }\sqrt[n]{a}=1\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-lim_-n-to-infty-fracann0a0" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题 5 证明： \(\lim_{ n \to \infty }\frac{a^n}{n!}=0(a&gt;0)\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-p22-214" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题 6 见课本 P22 例 2.1.4
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 数列极限的性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 数列极限的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1)唯一性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      (2)有界性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      (3)保序性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4)保号性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      (5)夹逼性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-lim_-n-to-infty-frac1n2-frac1n12dots-frac12n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      例 1 \(\lim_{ n \to \infty } \frac{1}{n^2}+ \frac{1}{(n+1)^2}+\dots+ \frac{1}{(2n)^2}\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lim_-n-to-infty-frac2n-12n" class="md-nav__link">
+    <span class="md-ellipsis">
+      例 2 \(\lim_{ n \to \infty } \frac{(2n-1)!!}{(2n)!!}\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      (6)四则运算
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 无穷小
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 无穷小">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1) 性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Mathematical analysis (H)</h1>
+
+<h2 id="1">1 函数：</h2>
+<blockquote>
+<p>数集到数集的映射</p>
+</blockquote>
+<h3 id="11-fx-f-1x">1.1 <span class="arithmatex">\(f(x)\)</span> 为双射， <span class="arithmatex">\(f^{-1}(x)\)</span> 为反函数</h3>
+<h3 id="12">1.2 性质</h3>
+<p>2.1 <strong>奇偶性</strong><br />
+若 <span class="arithmatex">\(D(x)\)</span> 关于原点对称，且：<br />
+(1) <span class="arithmatex">\(\forall x \in D,f(x)=f(-x)\)</span> 则为偶函数<br />
+(2) <span class="arithmatex">\(\forall x \in D,f(x)=-f(-x)\)</span> 则为奇函数<br />
+(3)其余情况:非奇非偶<br />
+2.2 <strong>单调性</strong><br />
+(1)对 <span class="arithmatex">\(\forall x_1 &gt;x_2 ,x_1,x_2\in D,f(x1)&gt;f(x2)\)</span> 则 f(x)为单调递增函数<br />
+(2)对 <span class="arithmatex">\(\forall x_1 &gt;x_2 ,x_1,x_2\in D,f(x1) \ge f(x2)\)</span> 则 f(x)为严格单调递增函数<br />
+2.3 <strong>有界性</strong><br />
+(1)对 <span class="arithmatex">\(\forall x \in D, \exists N&gt;0\)</span> 使 <span class="arithmatex">\(|f(x)|&lt;N,\)</span> 则 f(x)有界<br />
+(2)对 <span class="arithmatex">\(\forall x \in D, \exists N&gt;0\)</span> 使 <span class="arithmatex">\(f(x)&lt;N,\)</span> 则 f(x)有上界<br />
+2.4 <strong>周期性</strong><br />
+<span class="arithmatex">\(f:X \in R \rightarrow Y \in R\)</span><br />
+<span class="arithmatex">\(\exists t&gt;0，对\forall x \in X\)</span>，有 <span class="arithmatex">\(f(x+t)=f(x)\)</span> ，则为周期函数<br />
+2.5 <strong>限制与延拓</strong><br />
+<span class="arithmatex">\(f(x): A\rightarrow R\)</span> , <span class="arithmatex">\(g(x): B\rightarrow R\)</span> , <span class="arithmatex">\(A \subseteq B\)</span>，<span class="arithmatex">\(g与f\)</span>的对应关系相同<br />
+则称 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\(g(x)\)</span> 的限制， <span class="arithmatex">\(g(x)\)</span> 为 <span class="arithmatex">\(f(x)\)</span> 的延拓</p>
+<h3 id="13">1.3 初等函数</h3>
+<p><span class="arithmatex">\(C,x^{\alpha},a^{x},\)</span> 三角函数 <span class="arithmatex">\(,log_a{x},\)</span> 反三角函数 称为基本初等函数<br />
+其复合函数称为初等函数</p>
+<h3 id="14">1.4 常用函数</h3>
+<p>4.1 <strong>符号函数</strong></p>
+<div class="arithmatex">\[
+y=sgn(x)=\begin{cases}
+-1  ,x&lt;0 \\
+0,x=0 \\
+1,x&gt;0
+\end{cases}
+\]</div>
+<p>4.2 <strong>取整函数</strong></p>
+<div class="arithmatex">\[f(x)=[x]\]</div>
+<p>4.3 <strong>黎曼函数</strong></p>
+<div class="arithmatex">\[
+f(x) = \begin{cases}
+x, &amp; x = 0 \text{ 或 } x = 1 \\
+\frac{1}{p}, &amp; x = \frac{q}{p}, (p, q) = 1 \\
+x, &amp; x \in (0,1) \setminus \mathbb{Q}
+\end{cases}
+\]</div>
+<p>4.4 <strong>迪利克雷函数</strong></p>
+<div class="arithmatex">\[
+y = \begin{cases}
+1, &amp; x \in \mathbb{Q} \\
+0, &amp; x \in \mathbb{Q}^C
+\end{cases}
+\]</div>
+<h3 id="15">1.5 其他函数</h3>
+<p>5.1 <strong>隐函数</strong></p>
+<div class="arithmatex">\[F(x, y) = 0 \text{，例如 } x^2 + y^2 = R^2\]</div>
+<p>5.2 <strong>参数表示</strong></p>
+<div class="arithmatex">\[
+\begin{cases}
+x = a \cos(t) \\
+y = b \sin(t)
+\end{cases}
+\]</div>
+<h2 id="2">2 实数集</h2>
+<h3 id="21">2.1 提出</h3>
+<p>正整数集 <span class="arithmatex">\(\mathbb{N}^+\)</span> 对于加法、乘法封闭；整数集 <span class="arithmatex">\(\mathbb{N}\)</span> 对于加法、减法、乘法封闭；有理数集 <span class="arithmatex">\(\mathbb{Q}\)</span> 对于加减乘除都封闭，而对开根号、取极限不封闭。实数集对上述六种运算均封闭。</p>
+<h3 id="22">2.2 实数的表示</h3>
+<p>(1) 有理数即有限小数与无限循环小数<br />
+(2) 无理数即无限不循环小数<br />
+(3) 表示方法：<br />
+对实数 <span class="arithmatex">\(x\)</span> 先将数轴分为整数区间，使得 <span class="arithmatex">\(x\in [n_{0},n_{0}+1)\)</span> ；再进一步将该区间分为 10 份，使 <span class="arithmatex">\(x\in\left[ n_{0}.n_{1},n_{0}.n_{1}+\frac{1}{10} \right)\)</span> ;归纳重复该操作，即可得到 <span class="arithmatex">\(x=n_{0}.n_{1}n_{2}n_{3}\dots\)</span><br />
+若 <span class="arithmatex">\(x\)</span> 为有限小数，以 <span class="arithmatex">\(.\dot{9}\)</span> 结尾表示，如 <span class="arithmatex">\(0.2=0.1\dot{9}\)</span><br />
+(4) 比较大小<br />
+对 <span class="arithmatex">\(a=a_{0}.a_{1}a_{2}a_{3}\dots\)</span> , <span class="arithmatex">\(b=b_{0}.b_{1}b_{2}b_{3}\dots\)</span><br />
+若 <span class="arithmatex">\(a_{0}&gt;b_{0}\)</span> 或 <span class="arithmatex">\(\exists k \in \mathbb{N} ,\text{使得对} \forall n&lt;k,n\in \mathbb{N}\text{有}a_{n}=b_{n},\text{且}a_{n+1}&gt;b_{n+1}\)</span> 则称 <span class="arithmatex">\(a&gt;b\)</span><br />
+(5) 性质</p>
+<ul>
+<li>对加减乘除封闭</li>
+<li>有序关系(大小关系)</li>
+<li>大小有传递性</li>
+<li>具有稠密性(任何两个实数之间都有与之不同的实数)</li>
+<li>具有连续性(与数轴上的点一一对应)</li>
+</ul>
+<h3 id="23">2.3 确界原理</h3>
+<p><strong>(1) 确界</strong><br />
+设 <span class="arithmatex">\(S\in \mathbb{R}\)</span> ，若 <span class="arithmatex">\(y\in \mathbb{R}\)</span> 满足：</p>
+<ol>
+<li><span class="arithmatex">\(y\)</span> 是 <span class="arithmatex">\(\mathbb{R}\)</span> 的一个上界，即 <span class="arithmatex">\(\forall x\in S,x\leq y\)</span> ;</li>
+<li><span class="arithmatex">\(\forall \epsilon&gt;0,\exists x\in S,\text{使得}x&gt;y-\epsilon\)</span> (最小上界)</li>
+</ol>
+<p>则称 <span class="arithmatex">\(y\)</span> 为 <span class="arithmatex">\(S\)</span> 的上确界.</p>
+<h3 id="2_1"><strong>(2) 确界原理</strong></h3>
+<h4 id="s">定理：非空有上界数集 <span class="arithmatex">\(S\)</span> , 必有上确界. (实数的连续性)</h4>
+<p><strong>证：</strong></p>
+<h4 id="p1"><strong>P1 方便起见，先考虑上确界为正实数的情况</strong></h4>
+<p>设 <span class="arithmatex">\(S\)</span> 中含有非负元素<br />
+设 <span class="arithmatex">\(M\)</span> 为 <span class="arithmatex">\(S\)</span> 的一个上界，依次考虑 <span class="arithmatex">\([m]+1,[m],[m]-1,\dots,2,1\)</span> ，若该数为上界而后一项不为上界，则停止.<br />
+一定能取得 <span class="arithmatex">\(n_{0}\in \mathbb{N}\)</span> ，使得 <span class="arithmatex">\(n_{0}+1\)</span> 为 <span class="arithmatex">\(S\)</span> 的上界而 <span class="arithmatex">\(n_0\)</span> 不是上界，即可确定上确界的整数部分 <span class="arithmatex">\(n_{0}\)</span> .<br />
+继续归纳，可得对 <span class="arithmatex">\(\forall k \geq 1\)</span> , <span class="arithmatex">\([n_{0}.n_{1}\dots n_{k},n_{0}.n_{1}\dots n_{k}+\frac{1}{10^k})\)</span> 为<strong>最后一个含有 <span class="arithmatex">\(S\)</span> 中元素</strong>的范围<br />
+断言 <span class="arithmatex">\(\eta=n_{0}.n_{1}n_{2}\dots\)</span> 为 <span class="arithmatex">\(S\)</span> 的上确界，记为 <span class="arithmatex">\(Sup(S)\)</span> .</p>
+<h4 id="p2-eta-s"><strong>P2 证明 <span class="arithmatex">\(\eta\)</span> 为 <span class="arithmatex">\(S\)</span> 的上界</strong></h4>
+<p>反证：假设 <span class="arithmatex">\(\eta\)</span> 不为 <span class="arithmatex">\(S\)</span> 的上界，则 <span class="arithmatex">\(x\in S\)</span> 使 <span class="arithmatex">\(x&gt;\eta\)</span></p>
+<blockquote>
+<p>若 <span class="arithmatex">\(\exists k \in \mathbb{N} ,\text{使得对} \forall n&lt;k,n\in \mathbb{N}\text{有}a_{n}=b_{n},\text{且}a_{n+1}&gt;b_{n+1}\)</span> 则称 <span class="arithmatex">\(a&gt;b\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\(\eta=n_{0}.n_{1}n_{2}n_{3}\dots n_{k}n_{k+1}\dots\)</span><br />
+<span class="arithmatex">\(x&gt;\eta\)</span> 故 <span class="arithmatex">\(x=a_{0}.a_{1}a_{2}a_{3}\dots a_{k-1}a_{k}\dots\geq n_{0}.n_{1}n_{2}n_{3}\dots n_{k-1}a_{k}\geq n_{0}.n_{1}n_{2}n_{3}\dots n_{k-1}n_{k}+\frac{1}{10^{k}}\)</span><br />
+ 但此时 <span class="arithmatex">\(x\)</span> 超出了 <span class="arithmatex">\([n_{0}.n_{1}\dots n_{k},n_{0}.n_{1}\dots n_{k}+\frac{1}{10^k})\)</span> 区间，而该区间后必无 <span class="arithmatex">\(S\)</span> 的元素，矛盾<br />
+ 因此 <span class="arithmatex">\(\eta\)</span> 为 <span class="arithmatex">\(S\)</span> 的上界 .</p>
+<h4 id="p3-eta-s"><strong>P3 证明 <span class="arithmatex">\(\eta\)</span> 为 <span class="arithmatex">\(S\)</span> 的上确界</strong></h4>
+<p>对 <span class="arithmatex">\(\forall \epsilon &gt;0,\exists k_{0}\in\mathbb{N}^+,\text{使}\epsilon&gt; \frac{1}{10^k}\)</span> 则 <span class="arithmatex">\(\eta -\epsilon &lt;\eta -\frac{1}{10^k}\)</span><br />
+<span class="arithmatex">\(=n_{0}.n_{1}n_{2}n_{3}\dots n_{k}\dots-\frac{1}{10^k}\leq =n_{0}.n_{1}n_{2}n_{3}\dots n_{k}\)</span> 但取等条件无法满足(只能取得 <span class="arithmatex">\(\dot{0}\)</span> 而非 <span class="arithmatex">\(\dot{9}\)</span>)<br />
+故 <span class="arithmatex">\(\exists x\in [n_{0}.n_{1}\dots n_{k},n_{0}.n_{1}\dots n_{k}+\frac{1}{10^k})\subset S\)</span> 使得 <span class="arithmatex">\(\eta -\epsilon &lt;n_{0}.n_{1}n_{2}n_{3}\dots n_{k}&lt;x\)</span></p>
+<blockquote>
+<p><span class="arithmatex">\(\forall \epsilon&gt;0,\exists x\in S,\text{使得}x&gt;y-\epsilon\)</span> (上确界条件二) 满足</p>
+</blockquote>
+<p>故 <span class="arithmatex">\(\eta\)</span> 为 <span class="arithmatex">\(S\)</span> 的上确界.</p>
+<h4 id="p4"><strong>P4 扩展到一般情况(平移)</strong></h4>
+<p>即证：<span class="arithmatex">\(Sup(a+S)=\eta+a\)</span></p>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(y\)</span> 是 <span class="arithmatex">\(\mathbb{R}\)</span> 的一个上界，即 <span class="arithmatex">\(\forall x\in S,x\leq y\)</span> ;</li>
+<li><span class="arithmatex">\(\forall \epsilon&gt;0,\exists x\in S,\text{使得}x&gt;y-\epsilon\)</span> (最小上界)</li>
+</ol>
+</blockquote>
+<p>该式 <span class="arithmatex">\(\eta\)</span> 与 <span class="arithmatex">\(x\)</span> 均 <span class="arithmatex">\(+a\)</span> ，显然成立</p>
+<h4 id="p5"><strong>P5 证明上确界的唯一性</strong></h4>
+<p>假设 <span class="arithmatex">\(\eta,\eta^{’}\)</span> 均为 <span class="arithmatex">\(Sup(S)\)</span> ,且 <span class="arithmatex">\(\eta&gt;\eta^{'}\)</span> ,令 <span class="arithmatex">\(\epsilon=\frac{\eta-\eta{'}}{2}\)</span><br />
+故 <span class="arithmatex">\(\forall x\in S,x\leq \eta^{'}\)</span> (对 <span class="arithmatex">\(\eta{'}\)</span> 使用上确界条件一)<br />
+对 <span class="arithmatex">\(\epsilon&gt;0,\exists x\in S,\text{使得}x&gt;\eta-\epsilon=\frac{\eta+\eta{'}}{2}&gt;\eta{'}\)</span> (对 <span class="arithmatex">\(\eta\)</span> 使用上确界条件二)<br />
+矛盾，即 <span class="arithmatex">\(Sup(S)\)</span> 唯一<br />
+<strong>Q.E.D.</strong></p>
+<h2 id="24">2.4 可数集和连续统</h2>
+<p>(1) 集合的势 <span class="arithmatex">\(card(S)\)</span><br />
+若两个集合间可建立双射，则认为二者等势<br />
+等势是一种等价关系(满足自反性、对称性、传递性)<br />
+如 <span class="arithmatex">\(\mathbb{Z}\)</span> 与 <span class="arithmatex">\(\mathbb{N}\)</span> 等势，即 <span class="arithmatex">\(\mathbb{Z}\)</span> 按照 <span class="arithmatex">\(0,1,-1,2,-2,...\)</span> 的顺序排列，序数可唯一对应一个正整数<br />
+称 <span class="arithmatex">\(\mathbb{N}\)</span> 的势为可数的，与之等势的集合为可数集<br />
+易证：</p>
+<ul>
+<li><span class="arithmatex">\(\mathbb{Q}\)</span> 也为可数集(由于有限个可数集的并集也为可数集，只需考虑 <span class="arithmatex">\([0,1)\cap \mathbb{Q}\)</span> 是否可；通过 <span class="arithmatex">\(\frac{p}{q}\)</span> 的 <span class="arithmatex">\(q\)</span> 依次从小到大排列，去除重复项)</li>
+<li>有限个可数集的并集也为可数集(通过对角线交替排列)</li>
+</ul>
+<p>(2) 康托尔定理<br />
+<span class="arithmatex">\(card(X)&lt;card(2^X)\)</span><br />
+ (3) <span class="arithmatex">\(\mathbb{R}\)</span> 不为可数集<br />
+ 证：设 <span class="arithmatex">\(x_{j}=0.a_{j}^1a_{j}^2a_{j}^3\dots\)</span><br />
+ 构造 <span class="arithmatex">\(t=0.t_{1}t_{2}t_{3}\dots\)</span> 使得 <span class="arithmatex">\(t_{1}\neq a_{1}^1,t_{2}\neq a_{2}^2,\dots\)</span><br />
+ 故 <span class="arithmatex">\(t\)</span> 不在该集合中，即不可数<br />
+ 而 <span class="arithmatex">\(\mathbb{R}\)</span> 称为数的连续统<br />
+ (4) 任何一个无限集 <span class="arithmatex">\(A\)</span> 均包含一个可数集 <span class="arithmatex">\(S\)</span><br />
+ 通过在 <span class="arithmatex">\(A\backslash S\)</span> 中取出项加入 <span class="arithmatex">\(S\)</span> 迭代，可构造可数集 <span class="arithmatex">\(S\)</span></p>
+<h2 id="3">3 数列极限</h2>
+<h3 id="31">3.1 数列</h3>
+<p>定义：一类特殊的函数 <span class="arithmatex">\(f: \mathbb{N}\rightarrow\mathbb{R},f(n)=a_{n}\)</span></p>
+<h3 id="32-epsilon-n">3.2 <span class="arithmatex">\(\epsilon-N\)</span> 语言</h3>
+<ul>
+<li>对于数列 <span class="arithmatex">\(\{x_{n}\}\)</span> ，若对 <span class="arithmatex">\(\forall\epsilon&gt;0,\exists N\in\mathbb{N^+}\)</span> 使得对 <span class="arithmatex">\(\forall n&gt;N,\text{有} |x_{n}-a|&lt;\epsilon\)</span> 则称 <span class="arithmatex">\(a\)</span> 为 <span class="arithmatex">\(\{x_{n}\}\)</span> 的极限，记为 <span class="arithmatex">\(\lim_{ n \to \infty }x_{n}=a\)</span></li>
+<li>若存在极限，则称该数列收敛；反之，称该数列发散</li>
+</ul>
+<h3 id="33">3.3 放缩证明数列极限</h3>
+<h4 id="1-lim_-n-to-infty-frac-1nn0">例题 1 证明：<span class="arithmatex">\(\lim_{ n \to \infty }\frac{(-1)^n}{n}=0\)</span></h4>
+<p>证：</p>
+<div class="arithmatex">\[
+\text{对}\forall\epsilon&gt;0,\text{令} N=[\frac{1}{\epsilon}]+1
+\]</div>
+<blockquote>
+<p>注意 <span class="arithmatex">\(N\in\mathbb{N}\)</span> !</p>
+</blockquote>
+<div class="arithmatex">\[
+\text{故对}\forall n&gt;N,|0-\frac{(-1)^n}{n}|=\frac{1}{n}&lt;\epsilon
+\]</div>
+<div class="arithmatex">\[
+\text{故} \lim_{ n \to \infty }\frac{(-1)^n}{n}=0\text{成立.}
+\]</div>
+<h4 id="2-p22-213">例题 2 见课本 P22 例 2.1.3</h4>
+<blockquote>
+<p>注意 <span class="arithmatex">\(n\geq 2\)</span> 的限定及 <span class="arithmatex">\(N=max\{\left[ \frac{1}{\epsilon} \right],2\}\)</span></p>
+</blockquote>
+<h4 id="3-lim_-n-to-infty-qn0-q1">例题 3 证明： <span class="arithmatex">\(\lim_{ n \to \infty }q^n=0 (|q|&lt;1)\)</span></h4>
+<p>证：
+(1) <span class="arithmatex">\(q=0\)</span> 时，显然成立<br />
+(2) <span class="arithmatex">\(q\neq 0\)</span> 时 <span class="arithmatex">\(\forall \epsilon&gt;0\)</span> , <span class="arithmatex">\(\exists N=[|\log_{|q|}\epsilon|]+1\)</span> 使得 <span class="arithmatex">\(|q^N-0|&lt;\epsilon\)</span><br />
+即得证.</p>
+<h4 id="4-a1lim_-n-to-infty-sqrtna1">例题 4 证明： <span class="arithmatex">\(a&gt;1,\lim_{ n \to \infty }\sqrt[n]{a}=1\)</span></h4>
+<p>证：
+设 <span class="arithmatex">\(\sqrt[n]{a}-1=\alpha\)</span><br />
+<span class="arithmatex">\(\therefore a=(\alpha+1)^n&gt;1+\alpha n\)</span></p>
+<blockquote>
+<p><span class="arithmatex">\((1+x)^n&gt;1+x n\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\(\forall \epsilon&gt;0\)</span> , <span class="arithmatex">\(\exists N=[\frac{a-1}{\epsilon}]+1,n&gt;N\)</span><br />
+有 <span class="arithmatex">\(|\sqrt[n]{a}-1|\leq \frac{a-1}{n}&lt;\epsilon\)</span><br />
+即得证.</p>
+<h4 id="5-lim_-n-to-infty-fracann0a0">例题 5 证明： <span class="arithmatex">\(\lim_{ n \to \infty }\frac{a^n}{n!}=0(a&gt;0)\)</span></h4>
+<p>证：<br />
+取 <span class="arithmatex">\(k\in\mathbb{N},\text{使}a&lt;k\)</span> ,记 <span class="arithmatex">\(\frac{a^k}{k!}=K\)</span><br />
+<span class="arithmatex">\(\forall\epsilon&gt;0,\exists N=max\left( [\frac{ka}{\epsilon}]+1,k \right)\)</span><br />
+<span class="arithmatex">\(|\frac{a^n}{n!}|=\frac{a^ka^{n-k}}{k!(k+1)\dots n}\leq \frac{Ka}{n}&lt;\epsilon\)</span>
+即得证</p>
+<h4 id="6-p22-214">例题 6 见课本 P22 例 2.1.4</h4>
+<h3 id="34">3.4 数列极限的性质</h3>
+<h4 id="1_1">(1)唯一性</h4>
+<p><span class="arithmatex">\(a_{n}\)</span> 收敛，则 <span class="arithmatex">\(a_{n}\)</span> 有唯一极限<br />
+ 证明：令两不同极限 <span class="arithmatex">\(A,B\)</span> , <span class="arithmatex">\(\epsilon=\frac{A+B}{4}\)</span> ，无法同时满足 <span class="arithmatex">\(A,B\)</span> 的极限条件。</p>
+<h4 id="2_2">(2)有界性</h4>
+<p><span class="arithmatex">\(a_{n}\)</span> 收敛，则 <span class="arithmatex">\(a_{n}\)</span> 有界</p>
+<h4 id="3_1">(3)保序性</h4>
+<p><span class="arithmatex">\(\lim_{ n \to \infty }a_{n}&gt;\lim_{ n \to \infty }b_{n}\)</span> , 则 <span class="arithmatex">\(\exists N\in \mathbb{N},\forall n&gt;N,a_{n}&gt;b_{n}\)</span><br />
+ 证明：令两不同极限 <span class="arithmatex">\(A,B\)</span> , <span class="arithmatex">\(\epsilon=\frac{A-B}{4}\)</span> ，由极限条件可确定大小。</p>
+<h4 id="4">(4)保号性</h4>
+<p><span class="arithmatex">\(\lim_{ n \to \infty }a_{n}=A&gt;0,\exists N\in\mathbb{N},\forall n&gt;N,a_{n}&gt;\frac{A}{2}&gt;0\)</span></p>
+<h4 id="5">(5)夹逼性</h4>
+<p><span class="arithmatex">\(a_{n}\leq b_{n}\leq c_{n},a_{n},b_{n},c_{n}\text{收敛},\lim_{ n \to \infty }a_{n}&lt;\lim_{ n \to \infty }b_{n}&lt;\lim_{ n \to \infty }c_{n}\)</span><br />
+ 证明：将两个极限条件联立即可</p>
+<h4 id="1-lim_-n-to-infty-frac1n2-frac1n12dots-frac12n2">例 1 <span class="arithmatex">\(\lim_{ n \to \infty } \frac{1}{n^2}+ \frac{1}{(n+1)^2}+\dots+ \frac{1}{(2n)^2}\)</span></h4>
+<p>解： <span class="arithmatex">\(0\leq \frac{1}{n^2}+ \frac{1}{(n+1)^2}+\dots+ \frac{1}{(2n)^2}\leq \frac{n+1}{n^2}\leq \frac{2}{n}\)</span><br />
+ 由夹逼性 <span class="arithmatex">\(\text{原式=}0\)</span></p>
+<h4 id="2-lim_-n-to-infty-frac2n-12n">例 2 <span class="arithmatex">\(\lim_{ n \to \infty } \frac{(2n-1)!!}{(2n)!!}\)</span></h4>
+<p>解：由 <span class="arithmatex">\(\frac{m-1}{m}&lt; \frac{m}{m+1}\)</span><br />
+<span class="arithmatex">\(a=\)</span> 原式 <span class="arithmatex">\(&lt;\frac{2*4*6*\dots*2n}{3*5*7*\dots*(2n+1)}= \frac{2n!!}{(2n-1)!!} \frac{1}{2n+1}\)</span><br />
+<span class="arithmatex">\(\therefore a&lt; \frac{1}{a} \frac{1}{2n+1}, a&lt; \frac{1}{\sqrt{2n+1 }}\)</span><br />
+ 由夹逼性 <span class="arithmatex">\(\text{原式=}0\)</span></p>
+<h4 id="6">(6)四则运算</h4>
+<p>当 <span class="arithmatex">\(a_{n},b_{n}\)</span> 均存在极限，则加减乘除运算可行。</p>
+<blockquote>
+<p>前提为两者都有极限，不可存在 <span class="arithmatex">\(+\infty\)</span> 之类的运算</p>
+</blockquote>
+<p><strong>证明线性关系</strong>： <span class="arithmatex">\(\lim_{ n \to \infty }a_{n}=A,\lim_{ n \to \infty }b_{n}=B,\text{则}\lim_{ n \to \infty }(\lambda a_{n}+\mu b_{n})=\lambda A+\mu B\)</span><br />
+证： <span class="arithmatex">\(|\lambda a_{n}+\mu b_{n}-\lambda A-\mu B|\leq|\lambda(a_{n}-A)|+|\mu(b_{n}-B)|\)</span><br />
+<span class="arithmatex">\(|a_{n}-A|&lt; \frac{1}{\lambda+\mu+1}\epsilon,|b_{n}-B|&lt; \frac{1}{\lambda+\mu+1}\epsilon,|\lambda(a_{n}-A)|+|\mu(b_{n}-B)|&lt;\epsilon\)</span><br />
+ 由极限定义，得证<br />
+<strong>证明乘法关系</strong>： <span class="arithmatex">\(\lim_{ n \to \infty }a_{n}=A,\lim_{ n \to \infty }b_{n}=B,\text{则}\lim_{ n \to \infty }a_{n}b_{n}=AB\)</span><br />
+ 证：<span class="arithmatex">\(|a_{n}b_{n}-AB|=|a_{n}b_{n}-a_{n}B+a_{n}B-AB|\leq|a_{n}(b_{n}-B)|+|B(a_{n}-A)|\)</span><br />
+<span class="arithmatex">\(\because a_{n}\text{有界}\therefore |a_{n}|&lt;M,\text{令}|b_{n}-B|&lt; \frac{\epsilon}{2|M|},|a_{n}-A|&lt; \frac{\epsilon}{2(|B|+1)}\)</span><br />
+<span class="arithmatex">\(\text{原式}&lt;|M(b_{n}-B)|+|B(a_{n}-A)|&lt;\epsilon\)</span><br />
+ 由极限定义，得证<br />
+<strong>证明除法关系</strong>： <span class="arithmatex">\(\lim_{ n \to \infty }a_{n}=A,\lim_{ n \to \infty }b_{n}=B,\text{则}\lim_{ n \to \infty } \frac{a_{n}}{b_{n}} =\frac{A}{B}\)</span><br />
+ 证： <span class="arithmatex">\(| \frac{a_{n}}{b_{n}}- \frac{A}{B} |=| \frac{a_{n}B-b_{n}A}{b_{n}B}|\)</span><br />
+<span class="arithmatex">\(\because\lim_{ n \to \infty }b_{n}=B\therefore|b_{n}|&gt; \frac{|B|}{2}&gt;0\)</span><br />
+<span class="arithmatex">\(\therefore\text{原式}\leq| \frac{a_{n}B-AB+AB-b_{n}A}{B \frac{B}{2}}|=\frac{2(|B||a_{n}-A|+|A||b_{n}-B|)}{|B|^2}\)</span><br />
+ 令 <span class="arithmatex">\(|a_{n}-A|&lt; \frac{|B|}{4}\epsilon,|b_{n}-B|&lt; \frac{B^2}{4|A|+1}\epsilon\)</span><br />
+ 则原式 <span class="arithmatex">\(&lt;\epsilon\)</span> ,得证</p>
+<h3 id="35">3.5 无穷小</h3>
+<p><span class="arithmatex">\(\lim_{ n \to \infty }x_{n}=0\)</span> ，则称 <span class="arithmatex">\(x_{n}\)</span> 为无穷小</p>
+<h4 id="1_2">(1) 性质</h4>
+<p>若 <span class="arithmatex">\(x_{n},y_{n}\)</span> 是无穷小，则：</p>
+<ul>
+<li>对 <span class="arithmatex">\(\alpha ,\beta\in\mathbb{R}\)</span> ，<span class="arithmatex">\(\alpha x_{n}+\beta y_{n}\)</span> 也为无穷小</li>
+<li><span class="arithmatex">\(x_{n}y_{n}\)</span> 为无穷小</li>
+<li><span class="arithmatex">\(z_{n}\)</span> 有界，则 <span class="arithmatex">\(z_{n}x_{n}\)</span> 为无穷小</li>
+<li><span class="arithmatex">\(\lim_{ n \to \infty }t_{n}=a\)</span> 当且仅当 <span class="arithmatex">\(t_{n}-a\)</span> 为无穷小</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
